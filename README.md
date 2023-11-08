@@ -18,7 +18,8 @@
 
 - [x] Apaga as tarefas completas caso a lista esteja cheia e o usuário queira adicionar uma nova tarefa.
 
-- [] Trocar prioridade das tarefas, admitindo que a ordem da lista seja a ordem de prioridade. Índice 0 seja a mais prioritária e assim por diante.
+- [x] Trocar a ordem e prioridade das tarefas, admitindo que a ordem da lista seja a ordem de prioridade. Índice 0 seja a mais prioritária e assim por diante, caso a lista seja diferente da antiga retorna um erro específico.
+
 
 4. verificar se já está completada e não completar de novo
 

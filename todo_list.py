@@ -9,7 +9,7 @@ class ToDoList:
             if task in self.tasks:
                 return task
             else:
-                raise ValueError("Tarefa não encontrada na lista.")
+                raise ValueError("Task não encontrada na lista.")
         elif index is not None:
             try:
                 return self.tasks[index]
@@ -26,13 +26,13 @@ class ToDoList:
         
     def add_task(self, task):
         self.clear_completed_tasks()
-        if(len(self.tasks) < self.max_tasks):
-            if(task not in self.tasks):
+        if task not in self.tasks:
+            if len(self.tasks) < self.max_tasks:
                 self.tasks.append(task)
             else:
-                raise ValueError("Task já está cadastrada.")
+                raise ValueError("Limite de 3 tasks simultâneas atingido.")
         else:
-            raise ValueError("Limite de 3 tasks simultâneas atingido.")
+            raise ValueError("Task já está cadastrada.")
 
     def remove_task(self, task=None, index=None):
         if task is not None:
@@ -59,3 +59,22 @@ class ToDoList:
     def complete_task(self, task):
         if task in self.tasks and not self.is_task_completed(task):
             self.tasks[self.tasks.index(task)] = "DONE - " + task
+
+    def update_task(self, new_order=None, update_task_name=None):
+        if new_order is not None:
+            if len(new_order) != len(self.tasks):
+                raise ValueError("A nova lista deve ter o mesmo número de itens que a lista de tarefas.")
+            if not all(item in self.tasks for item in new_order):
+                raise ValueError("A lista 'new_order' contém itens que não estão na lista de tarefas.")
+            self.tasks = new_order
+
+        if update_task_name is not None:
+            old_name = update_task_name[0]
+            new_name = update_task_name[1]
+            if old_name in self.tasks:
+                self.tasks.remove(old_name)
+                self.tasks.append(new_name)
+
+        return self.tasks
+
+
