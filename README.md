@@ -12,13 +12,18 @@
 
 - [x] Remover tarefa por índice e se o indice não existir retornar erro específico
 
+- [x] Retorna a tarefa específica de cada índice, caso o índice esteja fora dos limites da lista retorna erro específico.
+
+- [x] Retorna a task específica caso exista, se não existir retorna erro específico.
+
+- [x] Apaga as tarefas completas caso a lista esteja cheia e o usuário queira adicionar uma nova tarefa.
+
+- [] Trocar prioridade das tarefas, admitindo que a ordem da lista seja a ordem de prioridade. Índice 0 seja a mais prioritária e assim por diante.
 
 4. verificar se já está completada e não completar de novo
 
 5. Limitar a quantidade de tarefas em progresso
 
 7. Modificar a ordem/local da tarefa na lista
-
-8. retorna a tarefa específica de cada número. Ex print numero 5... ai mostra só essa tarefa.
 
 13. Lista tarefas por ordem e/ou listar tarefas por ordem inversa
